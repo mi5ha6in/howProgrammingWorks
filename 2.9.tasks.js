@@ -74,3 +74,25 @@ const purchase = {
 };
 
 console.log(purchase);
+
+// Задача 4. Напишите функцию find, которая будет проходить по структуре из предыдущей
+// задачи и находить товар по его имени (проверяя все группы товаров). Имена могут
+// повторяться, но на этот раз нас интересует только первый товар, у которого имя совпало.
+
+// Пример использования функции find:
+
+// const result = find(purchase, 'Laptop');
+// console.log(result);
+// Должно вывести: { name: 'Laptop', price: 1500 }
+
+const find = (categories, productName) => {
+  for (const category in categories) {
+    for (const product of categories[category]) {
+      if (product.name === productName) {
+        return product;
+      }
+    }
+  }
+};
+
+console.log(find(purchase, "Socks"));
