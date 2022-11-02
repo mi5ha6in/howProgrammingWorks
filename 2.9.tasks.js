@@ -66,6 +66,7 @@ const purchase = {
   Textile: [
     { name: "Bag", price: 50 },
     { name: "Socks", price: 10 },
+    { name: "Socks", price: 11 },
   ],
   Office: [
     { name: "Pencil", price: 5 },
@@ -96,3 +97,22 @@ const find = (categories, productName) => {
 };
 
 console.log(find(purchase, "Socks"));
+
+// Задача 5. Теперь расширим предыдущую задачу: нужно так изменить функцию find,
+// чтобы она возвращала массив, содержащий все товары с указанным именем.
+// Если ни одного не нашли, то пустой массив.
+
+const findAll = (categories, productName) => {
+  let allProductsWithName = [];
+  for (const category in categories) {
+    for (const product of categories[category]) {
+      if (product.name === productName) {
+        allProductsWithName.push(product);
+      }
+    }
+  }
+
+  return allProductsWithName;
+};
+
+console.log(findAll(purchase, "Socks"));
