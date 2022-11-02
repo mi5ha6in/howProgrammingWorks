@@ -19,3 +19,27 @@ const items = [{ price: 40 }, { price: 120 }, { price: 505 }, { price: 350 }];
 for (const item of items) {
   console.log(`Price: ${item.price}`);
 }
+
+// Задача 2. Теперь давайте сделаем функцию, которая вычислит сумму всей покупки.
+// Дайте функции понятное название и добавьте такие правила: нужно проверять,
+// является ли цена числом (при помощи typeof), суммируем только положительные цены,
+// а если находим не число или отрицательное число, то выдаем ошибку при помощи throw.
+
+const getTotalPrice = (prices) => {
+  let total = 0;
+  for (const { price } of prices) {
+    if (typeof price !== "number") {
+      throw new Error("price is not number");
+    }
+
+    if (price < 0) {
+      throw new Error("price less than 0");
+    }
+
+    total += price;
+  }
+
+  return total;
+};
+
+console.log(getTotalPrice(items));
