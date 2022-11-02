@@ -43,3 +43,34 @@ const getTotalPrice = (prices) => {
 };
 
 console.log(getTotalPrice(items));
+
+// Задача 3. Возьмите эту структуру данных и дополните ее товарами
+// и группами товаров по примеру тех, которые уже есть:
+
+// const purchase = {
+//   Electronics: [
+//     { name: 'Laptop', price: 1500 },
+//     { name: 'Keyboard', price: 100 },
+//   ],
+//   Textile: [{ name: 'Bag', price: 50 }],
+// };
+// Поместите код в файл и выведите всю структуру на экран,
+// запустив код в node.js или браузере
+
+const purchase = {
+  Electronics: [
+    { name: "Laptop", price: 1500 },
+    { name: "Keyboard", price: 100 },
+    { name: "Phone", price: 1000 },
+  ],
+  Textile: [
+    { name: "Bag", price: 50 },
+    { name: "Socks", price: 10 },
+  ],
+  Office: [
+    { name: "Pencil", price: 5 },
+    { name: "Paper", price: 15 },
+  ],
+};
+
+console.log(purchase);
